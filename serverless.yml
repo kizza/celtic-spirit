@@ -1,0 +1,21 @@
+# Lift
+org: kizza
+app: celtic-spirit
+service: celtic-spirit-frontend
+frameworkVersion: '3'
+
+provider:
+  name: aws
+
+plugins:
+  - serverless-lift
+
+constructs:
+  react:
+    type: single-page-app
+    path: build
+    # https://github.com/getlift/lift/blob/master/docs/single-page-app.md#custom-domain
+    domain:
+      - celticspiritaustralia.com
+      - www.celticspiritaustralia.com
+    certificate: arn:aws:acm:us-east-1:373532833815:certificate/f667fc10-062a-4392-8cf1-faf423560639

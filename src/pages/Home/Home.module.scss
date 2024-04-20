@@ -1,0 +1,62 @@
+@import "../../shared";
+
+.Home {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #111;
+  padding: 2rem;
+  border: solid 1px black;
+
+  // https://getcssscan.com/css-box-shadow-examples
+  // box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  // box-shadow: rgba(62,98,50,0.25) 0px 50px 100px -20px, rgba(61,76,61,0.3) 0px 30px 60px -30px;
+
+  ul {
+    text-align: left;
+  }
+
+  img {
+    border: solid 1px #333;
+    margin-bottom: 1rem;
+    box-shadow: rgba(0,0,0,0.25) 0px 50px 100px -20px, rgba(0,13,0,0.3) 0px 30px 60px -30px;
+  }
+
+  .RightImage {
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0.3rem 0 0.3rem 1rem;
+      max-width: 60%;
+      float: right;
+    }
+  }
+  .LeftImage {
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0.3rem 1rem 0.3rem 0;
+      max-width: 40%;
+      float: left;
+    }
+  }
+
+  p {
+    color: #fefefe;
+    line-height: 1.6rem;
+    // font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+    font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+
+  strong {
+    color: #dce9db;
+    font-family: $other-font;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 1em;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 1em;
+  }
+}

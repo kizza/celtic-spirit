@@ -1,0 +1,160 @@
+@import "../../shared";
+
+.Audio {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  @extend %no-tap-highlight;
+
+  em {
+    display: block;
+    color: $text;
+    position: relative;
+    left: -0.4em;
+    padding-top: 0.2em;
+    font-size: 90%;
+    &:before {
+      content: "\201C";
+    }
+    &:after {
+      content: "\201D";
+    }
+  }
+}
+
+$icon-colour: purple;
+
+%PlayPause {
+  transition: padding ease-out 0.3s, background ease-out 0.3s;
+  // margin-right: 1.9em;
+  @extend %link-button;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 1.1em 1em;
+  color: $primary;
+  border-radius: $radius;
+
+  strong {
+    color: black;
+  }
+
+  i {
+    font-size: 1.2em;
+    position: relative;
+    margin-right: 0.6em;
+    float: left;
+    border: solid 3px $icon-colour;
+    border-radius: 50%;
+    height: 0.6em;
+    width: 0.6em;
+    padding: 0.6em;
+
+    &:before {
+      position: relative;
+      top: -0.15em;
+    }
+  }
+
+  strong {
+    position: relative;
+    top: 0.6em;
+  }
+
+  &:hover {
+    background: #e3d3e2;
+    color: #fa8234;
+    strong {
+      color: $purple;
+    }
+    i {
+      color: white;
+      border-color: #fa8234;
+      background: #fa8234;
+    }
+  }
+}
+
+.Play {
+  @extend %PlayPause;
+
+  .meta {
+    display: block;
+  }
+}
+
+// ie when playing
+.Pause {
+  @extend %PlayPause;
+  padding-bottom: 4em;
+  background: #e3d3e2;
+  color: purple;
+  strong {
+    color: $primary;
+  }
+  i {
+    color: white;
+    border-color: purple;
+    background: purple;
+  }
+  i:before {
+    left: -0.13em;
+  }
+}
+
+.LyricsLink {
+  transition: opacity ease-out 0.8s;
+  opacity: 0.5;
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  padding: 0.7em 1em;
+  @extend %link-button;
+  bottom: 0.4em;
+  left: 5em;
+  margin: 1em 0;
+  font-size: 80%;
+  color: $green;
+  background: #fff;
+  border-radius: 8px;
+
+  &:hover {
+    color: #fff;;
+    background: $orange;
+  }
+}
+
+.Paused {
+  .LyricsLink {
+    // visibility: hidden;
+    position: absolute;
+    height: 1px;
+    top: -99999px;
+  }
+}
+.Playing {
+  .LyricsLink {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.DownloadLink {
+  transition: color ease-out 0.3s;
+  display: block;
+  position: absolute;
+  padding: 0.6em;
+  top: 0.8em;
+  right: 0.8em;
+  color: $green;
+
+  &:hover {
+    color: $orange;
+  }
+
+  i {
+    position: relative;
+    top: 0.2em;
+  }
+}
+

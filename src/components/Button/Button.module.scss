@@ -1,0 +1,49 @@
+@import "../../shared";
+
+.Button {
+  @extend %button;
+  @extend %no-tap-highlight;
+  line-height: 1.6em;
+  font-size: 0.84em;
+  font-weight: bold;
+  padding: 1em 2em;
+  margin: 0 0.4em;
+  cursor: pointer;
+  font-family: $header-font;
+  outline: none;
+  position: relative;
+
+  color: white;
+  // color: $primary;
+  border-radius: 0.3em;
+  background: $purple;
+  border: none;
+
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+    background: $orange;
+    // background: #e3d3e2;
+    color2: white;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 1em;
+    margin: 0;
+    padding: 0.6em 2em;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+  }
+}
+
+.Button.Disabled,
+.Button.Disabled:hover {
+  color: $purple;
+  background: transparent;
+  box-shadow: none;
+  text-decoration: none;
+  cursor: default;
+  border-color: #999;
+}

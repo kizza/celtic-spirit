@@ -1,0 +1,40 @@
+@import "../../shared";
+
+.Logo {
+  width: 18rem;
+  margin: 0 auto 0;
+
+  h1 {
+    background: url(../../assets/logo.png) no-repeat 50% 50%;
+    background-size: 80%;
+    font-size: 0.1px;
+    height: 10rem;
+    // max-width: 16rem;
+    margin: 0;
+    padding: 0;
+    text-indent: -99999px;
+    // border: dotted 1px pink;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 16rem;
+    font-size: 4em;
+    h1 {
+      background-size: 100%;
+      height: 10rem;
+      // margin: 1em 0 0;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 6em;
+  }
+
+  @media (min-width: $breakpoint-wide) {
+    max-width: 14rem;
+  }
+}
